@@ -4,7 +4,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.27+-red.svg)](https://streamlit.io/)
 
-A comprehensive, enterprise-grade web scraping and data analysis platform specifically designed for Indiamart product data. Extract, analyze, and visualize market insights with advanced machine learning and NLP capabilities.
+<div align="center">
+  <img src="public/FFFFFF-1.png" alt="Web Scraper Logo" width="200"/>
+  <h3>A comprehensive, enterprise-grade web scraping and data analysis platform</h3>
+  <p>Extract, analyze, and visualize market insights with advanced machine learning and NLP capabilities</p>
+</div>
 
 ## ✨ Key Features
 
@@ -169,6 +173,32 @@ python src/main.py dashboard
 - 📂 **Category Analysis**: Market segmentation, keywords
 - 📋 **Data Quality**: Completeness, validation metrics
 
+## 📸 Screenshots
+
+### 🏠 Dashboard Home Page
+<div align="center">
+  <img src="public/start_page.png" alt="Dashboard Start Page" width="800"/>
+  <p><em>Welcome screen with navigation options and feature overview</em></p>
+</div>
+
+### 🔍 Data Scraping Interface
+<div align="center">
+  <img src="public/scraping_data.png" alt="Data Scraping Interface" width="800"/>
+  <p><em>Web scraping control panel with URL input, progress tracking, and status updates</em></p>
+</div>
+
+### 📊 Data Analysis Engine
+<div align="center">
+  <img src="public/data_analyzer.png" alt="Data Analysis Interface" width="800"/>
+  <p><em>Analysis workflow showing data processing, cleaning, and insight generation</em></p>
+</div>
+
+### 📈 Interactive Data Visualizer
+<div align="center">
+  <img src="public/Data Visualizer.png" alt="Data Visualization Dashboard" width="800"/>
+  <p><em>Comprehensive analytics dashboard with price analysis, seller insights, and market trends</em></p>
+</div>
+
 ## 🔧 Advanced Configuration
 
 ### Environment Variables
@@ -328,50 +358,8 @@ export LOG_LEVEL=DEBUG
 python src/main.py scrape --url "https://example.com"
 ```
 
-## 🤝 Contributing
 
-We welcome contributions! Please follow these steps:
 
-1. **Fork the repository**
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/amazing-enhancement
-   ```
-3. **Make your changes**
-4. **Add tests for new functionality**
-5. **Ensure all tests pass**
-   ```bash
-   pytest --cov=src tests/
-   ```
-6. **Update documentation**
-7. **Commit your changes**
-   ```bash
-   git commit -m 'Add amazing enhancement'
-   ```
-8. **Push to the branch**
-   ```bash
-   git push origin feature/amazing-enhancement
-   ```
-9. **Open a Pull Request**
-
-### Development Guidelines
-
-- Follow PEP 8 style guidelines
-- Add type hints for new functions
-- Write comprehensive docstrings
-- Maintain test coverage above 80%
-- Update README for new features
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙋 Support
-
-- **Documentation**: [Read the Docs](https://web-scraper-docs.readthedocs.io/)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/web-scraper-project/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/web-scraper-project/discussions)
-- **Email**: support@webscraper-project.com
 
 ## 🗺️ Roadmap
 
@@ -394,14 +382,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 🔄 Mobile app companion
 - 🔄 Integration with business intelligence tools
 
-## 📊 Performance Benchmarks
 
-- **Scraping Speed**: ~50 products/minute
-- **Analysis Time**: ~2 seconds per 1000 products
-- **Memory Usage**: ~200MB for 10K products
-- **Storage**: ~1MB per 1000 products
 
-## 🙏 Acknowledgments
+## 🙏 Tech Used
 
 - **Beautiful Soup** for HTML parsing
 - **Streamlit** for dashboard framework
