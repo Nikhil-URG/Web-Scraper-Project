@@ -30,8 +30,8 @@ class DataCleaner:
             # Read the CSV file
             df = pd.read_csv(input_file)
 
-            # Basic cleaning
-            df = df.dropna()  # Remove rows with NaN values
+            # Basic cleaning - only drop rows where essential columns are missing
+            df = df.dropna(subset=['Name', 'Price'])  # Only drop if name or price is missing
             df['Price'] = pd.to_numeric(df['Price'], errors='coerce').fillna(0.0)
             df['Name'] = df['Name'].astype(str).str.strip()
             df['Description'] = df['Description'].astype(str).str.strip()

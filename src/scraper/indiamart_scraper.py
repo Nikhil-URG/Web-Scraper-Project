@@ -133,7 +133,7 @@ class IndiamartScraper:
                 if json_match:
                     json_data = json_match.group(1)
                     data = json.loads(json_data)
-                    print("data : ",data)
+                    # print("data : ",data)
 
                     if 'data' in data and isinstance(data['data'], list):
                         for product_data in data['data']:

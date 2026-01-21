@@ -124,7 +124,23 @@ class DataStorage:
         data = {
             "trends": analyzed_data.trends,
             "patterns": analyzed_data.patterns,
-            "statistics": analyzed_data.statistics
+            "statistics": analyzed_data.statistics,
+            "descriptive_analysis": analyzed_data.descriptive_analysis,
+            "price_analysis": analyzed_data.price_analysis,
+            "category_analysis": analyzed_data.category_analysis,
+            "seller_analysis": analyzed_data.seller_analysis,
+            "text_analysis": analyzed_data.text_analysis,
+            "correlation_analysis": analyzed_data.correlation_analysis,
+            "market_trends": analyzed_data.market_trends,
+            "outliers": analyzed_data.outliers,
+            "geographical_insights": analyzed_data.geographical_insights,
+            "competitive_analysis": analyzed_data.competitive_analysis,
+            "demand_indicators": analyzed_data.demand_indicators,
+            "clustering": analyzed_data.clustering,
+            "time_series": analyzed_data.time_series,
+            "sentiment_analysis": analyzed_data.sentiment_analysis,
+            "inventory_analysis": analyzed_data.inventory_analysis,
+            "data_quality": analyzed_data.data_quality
         }
 
         with open(json_path, mode='w', encoding='utf-8') as file:

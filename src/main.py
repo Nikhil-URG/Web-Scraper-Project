@@ -115,27 +115,26 @@ def analyze_data(input_file: str, output_dir: str = "data/processed") -> Optiona
 
 def run_dashboard(input_file: Optional[str] = None):
     """Run the interactive dashboard.
-    
+
     Args:
         input_file: Optional path to analyzed data file
     """
     try:
         from src.visualizer.dashboard import Dashboard
         import pandas as pd
-        
+
         logger.info("Starting dashboard...")
-        
+
         dashboard = Dashboard()
-        
+
         if input_file:
             # Load the analyzed data
-            df = pd.read_json(input_file)
-            dashboard.run(df)
+            analysis_results = pd.read_json(input_file)
+            dashboard.run(analysis_results)
         else:
             # Run dashboard with empty data
-            empty_df = pd.DataFrame()
-            dashboard.run(empty_df)
-            
+            dashboard.run()
+
     except Exception as e:
         logger.error(f"Error running dashboard: {str(e)}")
 
