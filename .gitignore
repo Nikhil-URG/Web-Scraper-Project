@@ -1,0 +1,43 @@
+.kilocode
+.specify
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.egg-info/
+
+# Node.js
+node_modules/
+
+# Logs
+*.log
+
+# Environment files
+.env*
+
+# IDE
+.vscode/
+.idea/
+
+# Build artifacts
+build/
+dist/
+
+# Data files
+data/
+*.csv
+*.json
+
+# System files
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+#Agents
+specs

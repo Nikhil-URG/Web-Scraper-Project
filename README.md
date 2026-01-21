@@ -1,53 +1,215 @@
-![Logo](./public/FFFFFF-1.png)
-# Slooze take home challenge data-engineering
+# Webscraper for Indiamart Data Analysis
 
-# 📌 Problem Statement
+A comprehensive web scraping and data analysis tool for extracting product information from Indiamart and generating insights.
 
-## Part A – Data Collection: Crawler/Scraper/Data Collection Implementation
+## Features
 
-Your task is to design and implement a **data gathering application** capable of extracting relevant information from [IndiaMART](https://www.indiamart.com), [AliBaba](https://www.alibaba.com/), or similar B2B marketplaces. You are expected to:
+- **Web Scraping**: Extract product data from Indiamart including names, prices, descriptions, and seller information
+- **Data Analysis**: Clean, process, and analyze scraped data to identify trends and patterns
+- **Visualization**: Generate interactive dashboards and visualizations of the analyzed data
+- **Data Storage**: Save scraped data in structured formats (CSV, JSON)
 
-- Identify and target **a few meaningful product categories** (e.g., industrial machinery, electronics, textiles, etc.).
-- Build a custom web crawler, use a third-party scraping tool, or integrate AI-powered data extraction — **you are free to choose the best approach** for your solution.
-- Ensure that the application respects target site structures and avoids being blocked or rate-limited.
+## Project Structure
 
-### ✅ Evaluation Criteria:
-- **Effectiveness and robustness** of the crawler/data collector
-- **Code quality**, modularity, and maintainability
-- **Clean, structured, and relevant** data output (JSON/CSV/etc.)
+```
+webscraper-indiamart/
+├── src/
+│   ├── main.py                  # Main entry point
+│   ├── models/
+│   │   ├── product.py           # Product model
+│   │   ├── scraped_data.py      # Scraped data model
+│   │   └── analyzed_data.py     # Analyzed data model
+│   ├── scraper/
+│   │   ├── indiamart_scraper.py # Indiamart scraping logic
+│   │   └── data_storage.py      # Data storage functionality
+│   ├── analyzer/
+│   │   ├── data_cleaner.py      # Data cleaning and preprocessing
+│   │   └── data_analyzer.py     # Data analysis and insights
+│   └── visualizer/
+│       ├── plot_generator.py    # Plot generation
+│       └── dashboard.py         # Interactive dashboard
+├── tests/
+│   ├── unit/
+│   │   ├── test_scraper.py      # Scraper unit tests
+│   │   ├── test_analyzer.py     # Analyzer unit tests
+│   │   └── test_visualizer.py   # Visualizer unit tests
+│   └── integration/
+│       └── test_integration.py  # Integration tests
+├── data/
+│   ├── raw/                    # Raw scraped data
+│   ├── processed/               # Processed data
+│   └── visualizations/          # Generated visualizations
+├── requirements.txt            # Project dependencies
+├── .gitignore                  # Git ignore patterns
+└── README.md                   # Project documentation
+```
 
+## Installation
 
----
+### Prerequisites
 
-## Part B – Exploratory Data Analysis (EDA)
+- Python 3.8+
+- pip (Python package manager)
 
-After collecting the data, perform an **exploratory data analysis** to uncover meaningful insights. This may include:
+### Setup
 
-- Summary statistics of the dataset (counts, distributions, trends)
-- Identification of common attributes (e.g., top product types, price ranges, frequent keywords)
-- Regional insights (e.g., location-based supplier patterns)
-- Any anomalies, inconsistencies, or quality gaps in the scraped data
-to name a few
+1. Clone the repository:
 
-### ✅ Evaluation Criteria:
-- 📊 Visualizations and charts (where useful)
-- 🧠 Insights or hypotheses based on your findings
+```bash
+git clone https://github.com/yourusername/webscraper-indiamart.git
+cd webscraper-indiamart
+```
 
----
-## 📤 Submission
-- Upload your code ( crawling, ETL, EDA and similar others) to GitHub or share as zip file
-- Include instructions to run the code locally (e.g., python3, django)
+2. Create a virtual environment (recommended):
 
-> 💡 **Tip:** Creativity in your data gathering approach and depth in your analysis will be rewarded. Think of this as a mini end-to-end data engineering + analysis challenge.
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-## Connect with Us:
+3. Install dependencies:
 
-Reach out to **[careers@slooze.xyz](mailto:careers@slooze.xyz)** to submit your solutions or if you may have any questions related to the challenege
+```bash
+pip install -r requirements.txt
+```
 
-## © Copyright Notice
+## Usage
 
-**© Slooze. All Rights Reserved.**
+### Running the Web Scraper
 
-Please do not share or distribute this material outside the intended evaluation process.  
-For queries, contact us !!
+To scrape data from Indiamart:
 
+```bash
+python src/main.py scrape --url "https://dir.indiamart.com/impcat/pvc-pipes.html"
+```
+
+### Running the Data Analyzer
+
+To analyze scraped data:
+
+```bash
+python src/main.py analyze --input data/raw/scraped_data.csv
+```
+
+### Running the Visualizer
+
+To generate visualizations:
+
+```bash
+python src/main.py visualize --input data/processed/analyzed_data.json
+```
+
+### Running the Dashboard
+
+To start the interactive dashboard:
+
+```bash
+python src/main.py dashboard --input data/processed/analyzed_data.json
+```
+
+## Running Tests
+
+### Unit Tests
+
+```bash
+pytest tests/unit/
+```
+
+### Integration Tests
+
+```bash
+pytest tests/integration/
+```
+
+### All Tests
+
+```bash
+pytest
+```
+
+### Test with Coverage
+
+```bash
+pytest --cov=src tests/
+```
+
+## Configuration
+
+The project uses environment variables for configuration. Create a `.env` file in the project root:
+
+```
+# Scraper settings
+SCRAPER_TIMEOUT=30
+SCRAPER_RETRIES=3
+SCRAPER_DELAY=2
+
+# Data storage settings
+DATA_DIR=data
+RAW_DATA_DIR=data/raw
+PROCESSED_DATA_DIR=data/processed
+VISUALIZATIONS_DIR=data/visualizations
+
+# Logging settings
+LOG_LEVEL=INFO
+LOG_FILE=webscraper.log
+```
+
+## Development
+
+### Code Formatting
+
+```bash
+black src/ tests/
+```
+
+### Linting
+
+```bash
+flake8 src/ tests/
+```
+
+### Type Checking
+
+```bash
+mypy src/ tests/
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature-name`
+3. Make your changes and commit them: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For questions or support, please contact:
+- Email: support@webscraper-indiamart.com
+- GitHub Issues: https://github.com/yourusername/webscraper-indiamart/issues
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Import Errors**: Ensure you've activated the virtual environment and installed all dependencies.
+
+2. **Scraping Failures**: Check your internet connection and verify the target URLs are accessible.
+
+3. **Permission Errors**: Make sure the data directories exist and are writable.
+
+### Debugging
+
+Enable debug logging by setting `LOG_LEVEL=DEBUG` in your `.env` file or environment variables.
+
+## Roadmap
+
+- Add support for additional e-commerce platforms
+- Implement machine learning for advanced trend analysis
+- Add user authentication for the dashboard
+- Implement scheduled scraping jobs
+- Add export functionality for reports
